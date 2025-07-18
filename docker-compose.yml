@@ -8,15 +8,7 @@ services:
     environment:
       - FRAPPE_SITE_NAME=aspirehr.docker
       - ADMIN_PASSWORD=admin
-    depends_on:
-      - redis
-    volumes:
-      - ./sites:/app/frappe-bench/sites
-    
-  redis:
-    image: redis:7-alpine
-    ports:
-      - "6379:6379"
+    stdin_open: true
+    tty: true
 
-volumes:
-  sites:
+# No separate Redis needed as it's included in the container

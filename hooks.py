@@ -4,7 +4,7 @@ app_publisher = "Your Company"
 app_description = "Modern HR and Payroll Management System"
 app_email = "admin@yourcompany.com"
 app_license = "MIT"
-required_apps = ["frappe/erpnext"]
+required_apps = ["frappe"]
 source_link = "https://github.com/yourcompany/aspirehr"
 app_logo_url = "/assets/aspirehr/images/aspirehr-logo.svg"
 app_home = "/app/aspirehr-overview"
@@ -24,52 +24,22 @@ add_to_apps_screen = [
 
 # include js, css files in header of desk.html
 app_include_js = [
-	"aspirehr.bundle.js",
 	"leave_allocation.js",
 ]
-app_include_css = "aspirehr.bundle.css"
+app_include_css = "aspirehr.css"
 
 # include js in doctype views
 doctype_js = {
-	"Employee": "public/js/erpnext/employee.js",
-	"Payroll Entry": "public/js/payroll_entry.js",
-	"Salary Slip": "public/js/salary_slip.js",
-	"Salary Structure": "public/js/salary_structure.js",
-	"Attendance": "public/js/attendance.js",
-	"Leave Application": "public/js/leave_application.js",
-	"Expense Claim": "public/js/expense_claim.js",
-	"Training Program": "public/js/training_program.js",
-	"Job Opening": "public/js/job_opening.js",
-	"Job Applicant": "public/js/job_applicant.js",
-	"Appraisal": "public/js/appraisal.js",
-	"Employee Onboarding": "public/js/employee_onboarding.js",
-	"Employee Separation": "public/js/employee_separation.js",
-	"Shift Type": "public/js/shift_type.js",
-	"Employee Checkin": "public/js/employee_checkin.js",
-	"Travel Request": "public/js/travel_request.js",
-	"Interview": "public/js/interview.js",
-	"Offer Letter": "public/js/offer_letter.js",
+	"Employee": "public/js/employee_list.js",
 }
 
 doctype_list_js = {
 	"Employee": "public/js/employee_list.js",
-	"Attendance": "public/js/attendance_list.js",
-	"Leave Application": "public/js/leave_application_list.js",
-	"Expense Claim": "public/js/expense_claim_list.js",
-	"Salary Slip": "public/js/salary_slip_list.js",
-	"Job Applicant": "public/js/job_applicant_list.js",
-	"Interview": "public/js/interview_list.js",
 }
 
-doctype_tree_js = {
-	"Department": "public/js/department_tree.js"
-}
+doctype_tree_js = {}
 
-doctype_calendar_js = {
-	"Training Program": "public/js/training_program_calendar.js",
-	"Leave Application": "public/js/leave_application_calendar.js",
-	"Interview": "public/js/interview_calendar.js",
-}
+doctype_calendar_js = {}
 
 # Document Events
 # ---------------

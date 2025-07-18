@@ -1,0 +1,10 @@
+{
+	"js": [
+		"public/js/aspirehr.js",
+		"public/js/leave_allocation.js",
+		"public/js/employee_list.js"
+	],
+	"css": [
+		"public/css/aspirehr.css"
+	]
+}

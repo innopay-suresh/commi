@@ -31,6 +31,9 @@ RUN useradd -m -s /bin/bash frappe \
 USER frappe
 WORKDIR /home/frappe
 
+# Add .local/bin to PATH
+ENV PATH="/home/frappe/.local/bin:${PATH}"
+
 # Install frappe-bench
 RUN pip3 install frappe-bench
 
@@ -38,7 +41,7 @@ RUN pip3 install frappe-bench
 COPY --chown=frappe:frappe . /home/frappe/aspirehr
 
 # Initialize frappe-bench with minimal setup
-RUN bench init --skip-redis-config-generation --no-procfile --skip-assets frappe-bench
+RUN /home/frappe/.local/bin/bench init --skip-redis-config-generation --no-procfile --skip-assets frappe-bench
 
 # Change to bench directory
 WORKDIR /home/frappe/frappe-bench
@@ -51,6 +54,7 @@ RUN ./env/bin/pip install -e apps/aspirehr
 
 # Create a simple startup script
 RUN echo '#!/bin/bash\n\
+export PATH="/home/frappe/.local/bin:$PATH"\n\
 redis-server &\n\
 sleep 5\n\
 if [ ! -f sites/aspirehr.docker/site_config.json ]; then\n\

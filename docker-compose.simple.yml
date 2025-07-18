@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  aspirehr-demo:
+    build:
+      context: .
+      dockerfile: Dockerfile.simple
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_ENV=development
+    stdin_open: true
+    tty: true
+
+  # Alternative: Full Frappe setup (if you want to try the complex version)
+  aspirehr-full:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8000"
+    environment:
+      - FRAPPE_SITE_NAME=aspirehr.docker
+      - ADMIN_PASSWORD=admin
+    stdin_open: true
+    tty: true
+    profiles:
+      - full

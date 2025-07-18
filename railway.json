@@ -1,0 +1,13 @@
+{
+  "build": {
+    "builder": "DOCKERFILE"
+  },
+  "deploy": {
+    "startCommand": "bench --site aspirehr.railway.app serve --port $PORT",
+    "restartPolicyType": "ON_FAILURE"
+  },
+  "environment": {
+    "NODE_VERSION": "18",
+    "PYTHON_VERSION": "3.10"
+  }
+}

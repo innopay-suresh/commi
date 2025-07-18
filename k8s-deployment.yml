@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aspirehr-app
+  labels:
+    app: aspirehr
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: aspirehr
+  template:
+    metadata:
+      labels:
+        app: aspirehr
+    spec:
+      containers:
+      - name: aspirehr
+        image: your-registry/aspirehr:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: FRAPPE_SITE_NAME
+          value: "aspirehr.k8s.local"
+        - name: DB_HOST
+          value: "mariadb-service"
+        - name: REDIS_HOST
+          value: "redis-service"
+        volumeMounts:
+        - name: sites-volume
+          mountPath: /home/frappe/frappe-bench/sites
+      volumes:
+      - name: sites-volume
+        persistentVolumeClaim:
+          claimName: aspirehr-sites-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aspirehr-service
+spec:
+  selector:
+    app: aspirehr
+  ports:
+  - port: 80
+    targetPort: 8000
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: aspirehr-sites-pvc
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi

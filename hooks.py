@@ -24,9 +24,11 @@ add_to_apps_screen = [
 
 # include js, css files in header of desk.html
 app_include_js = [
-	"leave_allocation.js",
+	"/assets/aspirehr/js/aspirehr.js",
 ]
-app_include_css = "aspirehr.css"
+app_include_css = [
+	"/assets/aspirehr/css/aspirehr.css"
+]
 
 # include js in doctype views
 doctype_js = {
@@ -234,5 +236,3 @@ global_search_doctypes = {
 
 # Apps
 # ----
-
-required_apps = ["erpnext"]

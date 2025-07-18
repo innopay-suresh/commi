@@ -1,0 +1,11 @@
+{
+  "name": "aspirehr",
+  "version": "1.0.0-dev",
+  "description": "Modern HR and Payroll Management System",
+  "main": "public/js/aspirehr.js",
+  "scripts": {
+    "build": "echo 'Build completed'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

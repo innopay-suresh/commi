@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  aspirehr-app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - FRAPPE_SITE_NAME=aspirehr.local
+      - ADMIN_PASSWORD=admin
+    volumes:
+      - ./sites:/home/frappe/frappe-bench/sites
+    depends_on:
+      - db
+      - redis
+    
+  db:
+    image: mariadb:10.6
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=aspirehr
+      - MYSQL_USER=aspirehr
+      - MYSQL_PASSWORD=aspirehr
+    volumes:
+      - db_data:/var/lib/mysql
+    
+  redis:
+    image: redis:alpine
+    volumes:
+      - redis_data:/data
+
+volumes:
+  db_data:
+  redis_data:

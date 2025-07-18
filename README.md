@@ -298,7 +298,39 @@ For enterprise support and customization services:
 - [ ] Advanced integrations
 - [ ] Multi-tenant architecture
 
-## 📄 **License**
+## � **Troubleshooting**
+
+### Asset Building Issues
+
+If you encounter errors during asset building (esbuild errors), try these solutions:
+
+1. **Install without building assets:**
+   ```bash
+   bench get-app https://github.com/innopay-suresh/commi.git
+   bench --site [your-site-name] install-app aspirehr --skip-assets
+   bench --site [your-site-name] migrate
+   ```
+
+2. **Build assets separately:**
+   ```bash
+   bench build --app aspirehr
+   ```
+
+3. **Alternative installation script:**
+   ```bash
+   # Download and run the installation script
+   curl -O https://raw.githubusercontent.com/innopay-suresh/commi/main/install_without_assets.sh
+   chmod +x install_without_assets.sh
+   ./install_without_assets.sh
+   ```
+
+### Common Issues
+
+- **Missing dependencies**: Make sure Frappe Framework is properly installed
+- **Permission errors**: Check file permissions in the apps directory
+- **Build errors**: Try clearing the cache with `bench clear-cache`
+
+## �📄 **License**
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 

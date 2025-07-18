@@ -1,0 +1,634 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{employee_number}",
+ "creation": "2018-08-06 16:12:40.621473",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee_name",
+  "employee_number",
+  "section_break_5",
+  "gender",
+  "date_of_birth",
+  "marital_status",
+  "place_of_birth",
+  "country_of_birth",
+  "section_break_14",
+  "blood_group",
+  "health_details",
+  "column_break_17",
+  "height",
+  "weight",
+  "section_break_19",
+  "personal_email",
+  "mobile_number",
+  "present_address",
+  "permanent_address",
+  "column_break_24",
+  "personal_phone_no",
+  "emergency_contact_number",
+  "emergency_contact_person",
+  "relation_with_emergency_contact",
+  "section_break_30",
+  "user_id",
+  "naming_series",
+  "biometric_id",
+  "designation",
+  "department",
+  "branch",
+  "reports_to",
+  "date_of_joining",
+  "leave_encashment_date",
+  "relieving_date",
+  "column_break_40",
+  "status",
+  "location",
+  "company_email",
+  "company_phone",
+  "attendance_device_id",
+  "company",
+  "payroll_cost_center",
+  "assigned_shift",
+ "last_punch",
+  "section_break_49",
+  "salary_structure",
+  "salary_mode",
+  "bank_name",
+  "bank_account_no",
+  "column_break_54",
+  "pension_scheme",
+  "pension_joining_date",
+  "uif_no",
+  "payment_method",
+  "salary_account",
+  "section_break_60",
+  "family_background",
+  "education",
+  "external_work_history",
+  "internal_work_history",
+  "references",
+  "tab_break_66",
+  "jobs",
+  "job_title",
+  "job_description",
+  "duties_and_responsibilities",
+  "skills",
+  "column_break_72",
+  "required_experience",
+  "educational_requirements",
+  "key_performance_indicators",
+  "tab_break_76",
+  "statutory_requirements",
+  "pan_no",
+  "uid",
+  "nssf_no",
+  "nhif_no",
+  "section_break_82",
+  "passport_no",
+  "visa_no",
+  "visa_expiry_date",
+  "work_permit_no",
+  "work_permit_expiry_date",
+  "column_break_88",
+  "cin_no",
+  "validity_start_date",
+  "validity_end_date",
+  "labour_card_no",
+  "labour_card_expiry_date",
+  "section_break_94",
+  "custom_fields_break",
+  "custom_fields"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break",
+   "label": "Personal Information"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nMale\nFemale\nOther"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "marital_status",
+   "fieldtype": "Select",
+   "label": "Marital Status",
+   "options": "\nSingle\nMarried\nDivorced\nWidowed"
+  },
+  {
+   "fieldname": "place_of_birth",
+   "fieldtype": "Data",
+   "label": "Place of Birth"
+  },
+  {
+   "fieldname": "country_of_birth",
+   "fieldtype": "Link",
+   "label": "Country of Birth",
+   "options": "Country"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break",
+   "label": "Health Information"
+  },
+  {
+   "fieldname": "blood_group",
+   "fieldtype": "Select",
+   "label": "Blood Group",
+   "options": "\nA+\nA-\nB+\nB-\nAB+\nAB-\nO+\nO-"
+  },
+  {
+   "fieldname": "health_details",
+   "fieldtype": "Text",
+   "label": "Health Details"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "height",
+   "fieldtype": "Data",
+   "label": "Height"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Data",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break",
+   "label": "Contact Information"
+  },
+  {
+   "fieldname": "personal_email",
+   "fieldtype": "Data",
+   "label": "Personal Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number"
+  },
+  {
+   "fieldname": "present_address",
+   "fieldtype": "Link",
+   "label": "Present Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "permanent_address",
+   "fieldtype": "Link",
+   "label": "Permanent Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "personal_phone_no",
+   "fieldtype": "Data",
+   "label": "Personal Phone No."
+  },
+  {
+   "fieldname": "emergency_contact_number",
+   "fieldtype": "Data",
+   "label": "Emergency Contact Number"
+  },
+  {
+   "fieldname": "emergency_contact_person",
+   "fieldtype": "Data",
+   "label": "Emergency Contact Person"
+  },
+  {
+   "fieldname": "relation_with_emergency_contact",
+   "fieldtype": "Data",
+   "label": "Relation with Emergency Contact"
+  },
+  {
+   "fieldname": "section_break_30",
+   "fieldtype": "Section Break",
+   "label": "Officeal Details"
+  },
+  {
+   "fieldname": "user_id",
+   "fieldtype": "Link",
+   "label": "User ID",
+   "options": "User"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "HR-EMP-.#",
+   "reqd": 1
+  },
+  {
+   "fieldname": "biometric_id",
+   "fieldtype": "Data",
+   "label": "Biometric ID"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Designation",
+   "options": "Designation"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "reports_to",
+   "fieldtype": "Link",
+   "label": "Reports To",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date of Joining"
+  },
+  {
+   "fieldname": "leave_encashment_date",
+   "fieldtype": "Date",
+   "label": "Leave Encashment Date"
+  },
+  {
+   "fieldname": "relieving_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Relieving Date"
+  },
+  {
+   "fieldname": "column_break_40",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\nActive\nInactive\nYet To Join\nOn Leave\nTerminated"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Location"
+  },
+  {
+   "fieldname": "company_email",
+   "fieldtype": "Data",
+   "label": "Company Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "company_phone",
+   "fieldtype": "Data",
+   "label": "Company Phone"
+  },
+  {
+   "fieldname": "attendance_device_id",
+   "fieldtype": "Data",
+   "label": "Attendance Device ID"
+  },
+  {
+   "fieldname": "assigned_shift",
+   "fieldtype": "Link",
+   "label": "Attendance Device ID"
+  },
+ {
+ "fieldname": "last_punch",
+ "fieldtype": "Data",
+ "label": "Last Punch",
+ "read_only": 1
+ },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payroll_cost_center",
+   "fieldtype": "Link",
+   "label": "Payroll Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "section_break_49",
+   "fieldtype": "Section Break",
+   "label": "Payment Details"
+  },
+  {
+   "fieldname": "salary_structure",
+   "fieldtype": "Link",
+   "label": "Salary Structure",
+   "options": "Salary Structure"
+  },
+  {
+   "fieldname": "salary_mode",
+   "fieldtype": "Select",
+   "label": "Salary Mode",
+   "options": "Bank Transfer\nCash\nCheque"
+  },
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Name"
+  },
+  {
+   "fieldname": "bank_account_no",
+   "fieldtype": "Data",
+   "label": "Bank Account No."
+  },
+  {
+   "fieldname": "column_break_54",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pension_scheme",
+   "fieldtype": "Data",
+   "label": "Pension Scheme"
+  },
+  {
+   "fieldname": "pension_joining_date",
+   "fieldtype": "Date",
+   "label": "Pension Joining Date"
+  },
+  {
+   "fieldname": "uif_no",
+   "fieldtype": "Data",
+   "label": "UIF No."
+  },
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Select",
+   "label": "Payment Method",
+   "options": "Bank Transfer\nCash\nCheque"
+  },
+  {
+   "fieldname": "salary_account",
+   "fieldtype": "Link",
+   "label": "Salary Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "section_break_60",
+   "fieldtype": "Section Break",
+   "label": "Other Information"
+  },
+  {
+   "fieldname": "family_background",
+   "fieldtype": "Table",
+   "label": "Family Background",
+   "options": "Employee Family"
+  },
+  {
+   "fieldname": "education",
+   "fieldtype": "Table",
+   "label": "Education",
+   "options": "Employee Education"
+  },
+  {
+   "fieldname": "external_work_history",
+   "fieldtype": "Table",
+   "label": "External Work History",
+   "options": "Previous Employment Details"
+  },
+  {
+   "fieldname": "internal_work_history",
+   "fieldtype": "Table",
+   "label": "Internal Work History",
+   "options": "Internal Work History"
+  },
+  {
+   "fieldname": "references",
+   "fieldtype": "Table",
+   "label": "References",
+   "options": "Employee Reference"
+  },
+  {
+   "fieldname": "tab_break_66",
+   "fieldtype": "Tab Break",
+   "label": "Jobs"
+  },
+  {
+   "fieldname": "jobs",
+   "fieldtype": "Table",
+   "label": "Jobs",
+   "options": "Employee Job"
+  },
+  {
+   "fieldname": "job_title",
+   "fieldtype": "Data",
+   "label": "Job Title"
+  },
+  {
+   "fieldname": "job_description",
+   "fieldtype": "Text",
+   "label": "Job Description"
+  },
+  {
+   "fieldname": "duties_and_responsibilities",
+   "fieldtype": "Text",
+   "label": "Duties and Responsibilities"
+  },
+  {
+   "fieldname": "skills",
+   "fieldtype": "Text",
+   "label": "Skills"
+  },
+  {
+   "fieldname": "column_break_72",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "required_experience",
+   "fieldtype": "Text",
+   "label": "Required Experience"
+  },
+  {
+   "fieldname": "educational_requirements",
+   "fieldtype": "Text",
+   "label": "Educational Requirements"
+  },
+  {
+   "fieldname": "key_performance_indicators",
+   "fieldtype": "Table",
+   "label": "Key Performance Indicators",
+   "options": "Employee KPI"
+  },
+  {
+   "fieldname": "tab_break_76",
+   "fieldtype": "Tab Break",
+   "label": "Statutory Requirements"
+  },
+  {
+   "fieldname": "pan_no",
+   "fieldtype": "Data",
+   "label": "PAN No."
+  },
+  {
+   "fieldname": "uid",
+   "fieldtype": "Data",
+   "label": "UID"
+  },
+  {
+   "fieldname": "nssf_no",
+   "fieldtype": "Data",
+   "label": "NSSF No."
+  },
+  {
+   "fieldname": "nhif_no",
+   "fieldtype": "Data",
+   "label": "NHIF No."
+  },
+  {
+   "fieldname": "section_break_82",
+   "fieldtype": "Section Break",
+   "label": "Work Permit Details"
+  },
+  {
+   "fieldname": "passport_no",
+   "fieldtype": "Data",
+   "label": "Passport No."
+  },
+  {
+   "fieldname": "visa_no",
+   "fieldtype": "Data",
+   "label": "Visa No."
+  },
+  {
+   "fieldname": "visa_expiry_date",
+   "fieldtype": "Date",
+   "label": "Visa Expiry Date"
+  },
+  {
+   "fieldname": "work_permit_no",
+   "fieldtype": "Data",
+   "label": "Work Permit No."
+  },
+  {
+   "fieldname": "work_permit_expiry_date",
+   "fieldtype": "Date",
+   "label": "Work Permit Expiry Date"
+  },
+  {
+   "fieldname": "column_break_88",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cin_no",
+   "fieldtype": "Data",
+   "label": "CIN No."
+  },
+  {
+   "fieldname": "validity_start_date",
+   "fieldtype": "Date",
+   "label": "Validity Start Date"
+  },
+  {
+   "fieldname": "validity_end_date",
+   "fieldtype": "Date",
+   "label": "Validity End Date"
+  },
+  {
+   "fieldname": "labour_card_no",
+   "fieldtype": "Data",
+   "label": "Labour Card No."
+  },
+  {
+   "fieldname": "labour_card_expiry_date",
+   "fieldtype": "Date",
+   "label": "Labour Card Expiry Date"
+  },
+  {
+   "fieldname": "section_break_94",
+   "fieldtype": "Section Break",
+   "label": "Custom Fields"
+  },
+  {
+   "fieldname": "custom_fields",
+   "fieldtype": "HTML",
+   "label": "Custom Fields",
+   "options": "<!-- add custom html here -->"
+  }
+ ],
+ "modified": "2023-11-24 16:23:52.718084",
+ "modified_by": "Administrator",
+ "module": "Human Resources",
+ "name": "Employee",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

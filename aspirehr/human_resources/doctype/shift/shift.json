@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "autoname": "field:shift_name",
+ "creation": "2023-11-17 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "shift_name",
+  "start_time",
+  "end_time",
+  "grace_period_late",
+  "grace_period_early"
+ ],
+ "fields": [
+  {
+   "fieldname": "shift_name",
+   "fieldtype": "Data",
+   "label": "Shift Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "label": "Start Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Time",
+   "label": "End Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "grace_period_late",
+   "fieldtype": "Int",
+   "label": "Grace Period (Late - minutes)"
+  },
+  {
+   "fieldname": "grace_period_early",
+   "fieldtype": "Int",
+   "label": "Grace Period (Early - minutes)"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-11-17 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "AspireHR",
+ "name": "Shift",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

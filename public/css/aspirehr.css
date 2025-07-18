@@ -1,0 +1,188 @@
+/* AspireHR Custom Styles */
+
+.aspirehr-dashboard {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.aspirehr-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+}
+
+.aspirehr-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.aspirehr-stat-card {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.aspirehr-stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #667eea;
+    display: block;
+}
+
+.aspirehr-stat-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+.aspirehr-employee-card {
+    border-left: 4px solid #667eea;
+    padding-left: 15px;
+}
+
+.aspirehr-leave-pending {
+    border-left-color: #f39c12;
+}
+
+.aspirehr-leave-approved {
+    border-left-color: #27ae60;
+}
+
+.aspirehr-leave-rejected {
+    border-left-color: #e74c3c;
+}
+
+.aspirehr-attendance-present {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.aspirehr-attendance-absent {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.aspirehr-attendance-half-day {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+.aspirehr-quick-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.aspirehr-quick-action-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s ease;
+}
+
+.aspirehr-quick-action-btn:hover {
+    background: #5a6fd8;
+    color: white;
+    text-decoration: none;
+}
+
+.aspirehr-timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.aspirehr-timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e0e0e0;
+}
+
+.aspirehr-timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.aspirehr-timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -35px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #667eea;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px #667eea;
+}
+
+.aspirehr-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.aspirehr-badge-success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.aspirehr-badge-warning {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.aspirehr-badge-danger {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.aspirehr-badge-info {
+    background: #cce7f0;
+    color: #055160;
+}
+
+.aspirehr-form-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.aspirehr-form-section h4 {
+    margin-top: 0;
+    color: #667eea;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .aspirehr-quick-actions {
+        flex-direction: column;
+    }
+    
+    .aspirehr-quick-action-btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .aspirehr-stat-number {
+        font-size: 2rem;
+    }
+}

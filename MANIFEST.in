@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include aspirehr *.css
+recursive-include aspirehr *.csv
+recursive-include aspirehr *.html
+recursive-include aspirehr *.ico
+recursive-include aspirehr *.js
+recursive-include aspirehr *.json
+recursive-include aspirehr *.md
+recursive-include aspirehr *.png
+recursive-include aspirehr *.py
+recursive-include aspirehr *.svg
+recursive-include aspirehr *.txt
+recursive-exclude aspirehr *.pyc

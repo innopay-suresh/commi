@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "hash",
+ "beta": false,
+ "creation": "2023-01-01 10:00:00.000000",
+ "doctype": "Biometric Log",
+ "editable_grid": true,
+ "engine": "InnoDB",
+ "field_order": [
+  "device",
+  "device_employee_id",
+  "timestamp",
+  "punch_type",
+  "raw_data"
+ ],
+ "fields": [
+  {
+   "fieldname": "device",
+   "fieldtype": "Link",
+   "label": "Biometric Device",
+   "options": "Biometric Device"
+  },
+  {
+   "fieldname": "device_employee_id",
+   "fieldtype": "Data",
+   "label": "Device Employee ID"
+  },
+  {
+   "fieldname": "timestamp",
+   "fieldtype": "Datetime",
+   "label": "Timestamp"
+  },
+  {
+   "fieldname": "punch_type",
+   "fieldtype": "Select",
+   "label": "Punch Type",
+   "options": "Check In\nCheck Out\nBreak In\nBreak Out"
+  },
+  {
+   "fieldname": "raw_data",
+   "fieldtype": "Text",
+   "label": "Raw Data"
+  }
+ ],
+ "is_submittable": false,
+ "links": [],
+ "modified": "2023-01-01 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Integrations",
+ "name": "Biometric Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

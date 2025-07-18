@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HRMS Dashboard</title>
+    <link rel="stylesheet" href="/assets/aspirehr/css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <!-- Logo Area -->
+            <div class="logo-area">
+                <h3>Your LOGO here</h3>
+            </div>
+            <!-- App Launcher Icon -->
+            <div class="app-launcher-icon">
+                <!-- Dotted grid icon -->
+                <i class="fas fa-th"></i>
+            </div>
+            <!-- Sidebar Menu -->
+            <div class="sidebar-menu">
+                <a href="#" class="menu-item" data-route="homepage"><i class="fas fa-home"></i> Homepage</a>
+                <a href="#" class="menu-item" data-route="employee"><i class="fas fa-user"></i> Employee</a>
+                <a href="#" class="menu-item" data-route="payroll"><i class="fas fa-money-check-alt"></i> Payroll</a>
+                <a href="#" class="menu-item" data-route="leave"><i class="fas fa-calendar-alt"></i> Leave</a>
+                <a href="#" class="menu-item" data-route="expense-claims"><i class="fas fa-file-invoice-dollar"></i> Expense Claims</a>
+                <a href="#" class="menu-item" data-route="performance"><i class="fas fa-chart-line"></i> Performance Management</a>
+                <a href="#" class="menu-item" data-route="workflow"><i class="fas fa-project-diagram"></i> Workflow</a>
+                <a href="#" class="menu-item" data-route="reports"><i class="fas fa-chart-pie"></i> Reports</a>
+                <a href="#" class="menu-item" data-route="engage"><i class="fas fa-comments"></i> Engage</a>
+            </div>
+        </div>
+        <div class="main-content">
+            <!-- Top Header -->
+            <div class="header">
+                <div class="welcome-message">
+                    <h2>Good Afternoon, <span id="user-fullname"><User></span> 👋</h2>
+                </div>
+                <div class="toggle-button">
+                    <button class="active">Welcome</button>
+                    <button>Dashboard</button>
+                </div>
+            </div>
+            <!-- City Skyline Background (Placeholder) -->
+            <!-- You can use an <img> tag with a base64 encoded SVG or a link to an SVG file -->
+            <img src="/assets/aspirehr/images/city-skyline.svg" alt="City Skyline" class="city-skyline">
+
+            <!-- Main Dashboard Cards Grid -->
+            <div class="dashboard-cards-grid">
+                <!-- Dashboard Cards -->
+                {% for card in dashboard_cards_data %}
+                <div class="dashboard-card {{ card.color_class }}" data-route="{{ card.route }}">
+                    <i class="{{ card.icon }}"></i>
+                    <h4>{{ card.label }}</h4>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Placeholder for Font Awesome icons - Replace with actual library inclusion -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script src="/assets/aspirehr/js/dashboard.js"></script>
+</body>
+</html>

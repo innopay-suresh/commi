@@ -1,30 +1,58 @@
-# Multi-stage Dockerfile for AspireHR
-FROM frappe/frappe:latest as base
+# Simplified Dockerfile for AspireHR
+FROM python:3.10-slim
 
 # Set working directory
-WORKDIR /home/frappe/frappe-bench
+WORKDIR /app
 
-# Install AspireHR
-RUN bench get-app https://github.com/innopay-suresh/commi.git aspirehr
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    build-essential \
+    mariadb-client \
+    && rm -rf /var/lib/apt/lists/*
 
-# Production stage
-FROM base as production
+# Install Node.js
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs
 
-# Create new site
-RUN bench new-site aspirehr.local --admin-password=admin --no-mariadb-socket
+# Install yarn
+RUN npm install -g yarn
 
-# Install app
-RUN bench --site aspirehr.local install-app aspirehr
+# Install frappe-bench
+RUN pip install frappe-bench
 
-# Set production configuration
-RUN bench --site aspirehr.local set-config developer_mode 0
-RUN bench --site aspirehr.local set-config server_script_enabled 1
+# Copy app files
+COPY . /app/aspirehr
 
-# Build assets
-RUN bench build --app aspirehr
+# Initialize frappe-bench
+RUN bench init --skip-redis-config-generation frappe-bench
+
+# Change to bench directory
+WORKDIR /app/frappe-bench
+
+# Link the app
+RUN ln -s /app/aspirehr apps/aspirehr
+
+# Install dependencies
+RUN pip install -e apps/aspirehr
+
+# Set environment variables
+ENV PYTHONPATH=/app/frappe-bench
+ENV FRAPPE_SITE_NAME=aspirehr.docker
 
 # Expose port
 EXPOSE 8000
 
+# Create startup script
+RUN echo '#!/bin/bash\n\
+if [ ! -f sites/aspirehr.docker/site_config.json ]; then\n\
+    bench new-site aspirehr.docker --admin-password=admin --no-mariadb-socket\n\
+    bench --site aspirehr.docker install-app aspirehr\n\
+fi\n\
+bench --site aspirehr.docker serve --port 8000 --host 0.0.0.0' > start.sh
+
+RUN chmod +x start.sh
+
 # Start command
-CMD ["bench", "start"]
+CMD ["./start.sh"]
